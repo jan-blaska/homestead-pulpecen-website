@@ -5,6 +5,7 @@ import React from 'react'
 import NavLink from './Navlink';
 import { usePathname } from 'next/navigation';
 import PFLogo from "/public/logo.svg"
+import Image from 'next/image'
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -15,10 +16,10 @@ const Navbar = () => {
                     <NavLink href="/photo-gallery" isActive={pathname.startsWith("/photo-gallery")}>Fotogalerie</NavLink>
                         <Link href="/">
                             <div className="relative cursor-pointer">
-                                <img
-                                src={PFLogo.src}
-                                alt="PrintForge Logo"
-                                className="w-[200px] h-auto hidden md:block"
+                                <Image
+                                    src={PFLogo.src}
+                                    alt="PrintForge Logo"
+                                    className="w-[200px] h-auto hidden md:block"
                                 />
                                 
                             </div>
