@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import React from 'react'
-import NavLink from './Navlink';
 import { usePathname } from 'next/navigation';
 import PFLogo from "/public/logo.svg"
 import Image from 'next/image'
+import NavLink from './NavLink';
 
 const Navbar = () => {
   const pathname = usePathname()
