@@ -20,6 +20,8 @@ const Navbar = () => {
                                     src={PFLogo.src}
                                     alt="PrintForge Logo"
                                     className="w-[200px] h-auto hidden md:block"
+                                    width={245}
+                                    height={230}
                                 />
                                 
                             </div>
