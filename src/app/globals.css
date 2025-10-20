@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --hp-primary: #C8A951;
 }
 
 @theme inline {
@@ -12,14 +13,7 @@
   --font-mono: var(--font-geist-mono);
   --font-kaushan-script: var(--font-kaushan-script);
   --font-roboto: var(--font-roboto);
-  --color-hp-primary: #C8A951;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-hp-primary: var(--hp-primary);
 }
 
 body {
@@ -31,4 +25,9 @@ body {
 h1 {
   font-family: var(--font-kaushan-script);
   font-size: 24px;
+}
+
+p {
+  font-family: var(--font-roboto);
+  font-size: 14px;
 }

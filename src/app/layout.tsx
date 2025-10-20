@@ -3,16 +3,6 @@ import { Geist, Geist_Mono, Kaushan_Script, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const kaushanScript = Kaushan_Script({
   weight: "400",
   variable: "--font-kaushan-script",
@@ -37,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${kaushanScript.variable} ${roboto.variable} antialiased`}
+        className={`${kaushanScript.variable} ${roboto.variable} antialiased`}
       >
         <Navbar />  
         {children}

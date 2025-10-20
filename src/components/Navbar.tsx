@@ -27,12 +27,12 @@ const Navbar = () => {
 
     return (
         <header className="w-full bg-white relative z-10">
-            <div className='w-full items-center flex bg-hp-primary h-16'>
+            <div className='w-full items-center flex bg-hp-primary h-16 text-white'>
                 <h1 className='w-1/2 text-right' style={{ marginRight: `${headerOffset}px` }}>{header.partOne}</h1>
                 <h1 className='w-1/2' style={{ marginLeft: `${headerOffset}px` }}>{header.partTwo}</h1>
             </div>
             <nav className="flex justify-center">
-                <ul className="flex h-12 w-full">
+                <ul className="flex h-12 w-full md:max-w-7xl">
                     <div className='w-1/2 flex items-center justify-around' style={{ paddingRight: `${headerOffset}px` }}> 
                         <NavLink href="/photo-gallery" isActive={pathname.startsWith("/photo-gallery")}>Fotogalerie</NavLink>
                         <NavLink href="/our-horses" isActive={pathname.startsWith("/our-horses")}>Naši koně</NavLink>

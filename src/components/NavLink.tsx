@@ -7,11 +7,11 @@ const NavLink = ({ href, children, isActive }: NavLinkProps) => {
     <li className="text-sm">
       <Link
         href={href}
-        className={`cursor-pointer ${isActive ? "font-bold text-black" : "text-black"}`}
+        className={` cursor-pointer hover:font-bold ${isActive ? "font-bold text-black" : "text-black"}`}
       >
         <span
           className={`
-            relative 
+            relative
             after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] 
             after:bg-current after:transition-all after:duration-300
             ${isActive ? "after:w-full" : "after:w-0 hover:after:w-full"}
