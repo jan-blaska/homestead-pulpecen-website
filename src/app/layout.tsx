@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Kaushan_Script, Roboto } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const kaushanScript = Kaushan_Script({
   weight: "400",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Navbar />  
         {children}
+        <Footer />  
       </body>
     </html>
   );
