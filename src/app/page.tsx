@@ -7,6 +7,7 @@ import TwoCuteHorsesWinter from "/public/two-cute-horses-winter.jpg";
 import HorsePath from "/public/horse-path.svg";
 import HelenWithOtherHorse from "/public/helen-with-other-horse.jpg";
 import PusaAsBull from "/public/pusa-as-bull.jpg";
+import ContentTextWithPhoto from '@/components/ContentTextWithPhoto';
 
 const Home = () => {
   return (
@@ -26,23 +27,14 @@ const Home = () => {
           alt="Three horse shoes"
           width={750}
           height={200}
-          className='mt-12 mb-24'
+          className='mt-12 mb-24 w-[95%] md:max-w-2xl'
         />
         <h1 className='mb-16'>Rodinný statek, kde koně jsou součástí rodiny</h1>
-        <div className='flex w-full md:max-w-7xl gap-16 items-center'>
-          <div className='flex flex-col gap-4 flex-2'>
-            <p>Jsme malý rodinný statek, kde se všechno točí kolem koní. Každý z nich má svou povahu, své radosti i vrtochy, ale společně s námi tvoří jeden domov.</p>
-            <p>Statek pro nás není jen místo, kde bydlíme. Je to kousek přírody, klidu a pohody, který si neseme v srdci. Je to prostor, kde můžeme zpomalit, nadechnout se a najít radost v obyčejných věcech – ať už je to ranní krmení, procházka s koňmi po louce, nebo společné chvíle v rodině.</p>
-            <p>Tento web vznikl proto, abychom se podělili o naše místo i s vámi. Najdete tu náš příběh, fotky z každodenního života a také možnost se s námi spojit. Protože věříme, že radost ze života s koňmi stojí za sdílení.</p>
-          </div>
-          <Image
-            src={TwoCuteHorsesWinter.src}
-            alt="Two cute horses in the winter"
-            width={750}
-            height={750}
-            className='flex-1 rounded-md'
-          />
-        </div>
+        <ContentTextWithPhoto 
+          imageSrc={TwoCuteHorsesWinter.src}
+          imageAlt='Two cute horses in the winter'
+          textArray={["Jsme malý rodinný statek, kde se všechno točí kolem koní. Každý z nich má svou povahu, své radosti i vrtochy, ale společně s námi tvoří jeden domov.", "Statek pro nás není jen místo, kde bydlíme. Je to kousek přírody, klidu a pohody, který si neseme v srdci. Je to prostor, kde můžeme zpomalit, nadechnout se a najít radost v obyčejných věcech – ať už je to ranní krmení, procházka s koňmi po louce, nebo společné chvíle v rodině.", "Tento web vznikl proto, abychom se podělili o naše místo i s vámi. Najdete tu náš příběh, fotky z každodenního života a také možnost se s námi spojit. Protože věříme, že radost ze života s koňmi stojí za sdílení."]}
+        />
         <Image
           src={HorsePath.src}
           alt="Horse Path"
@@ -55,15 +47,15 @@ const Home = () => {
           alt="Helen with other horse"
           width={800}
           height={600}
-          className='rounded-md'
+          className='rounded-md w-[95%] md:max-w-7xl'
         />
         <span className='w-full bg-hp-primary text-center text-white font-kaushan-script text-xl py-6 my-24'>I po tisících mil jsme stále někde na začátku.</span>
         <Image
           src={PusaAsBull.src}
           alt="Pusa as bull"
-          width={800}
-          height={600}
-          className='rounded-md'
+          width={1280}
+          height={853}
+          className='rounded-md w-[95%] md:max-w-7xl'
         />
       </div>
       

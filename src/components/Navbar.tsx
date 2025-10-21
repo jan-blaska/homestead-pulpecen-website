@@ -35,6 +35,7 @@ const Navbar = () => {
                 <ul className="flex h-12 w-full md:max-w-7xl">
                     <div className='w-1/2 flex items-center justify-around' style={{ paddingRight: `${headerOffset}px` }}> 
                         <NavLink href="/photo-gallery" isActive={pathname.startsWith("/photo-gallery")}>Fotogalerie</NavLink>
+                        <NavLink href="/photos-from-trips" isActive={pathname.startsWith("/photos-from-trips")}>Fotky z výletů</NavLink>
                         <NavLink href="/our-horses" isActive={pathname.startsWith("/our-horses")}>Naši koně</NavLink>
                     </div>
                     <Link className='absolute top-0 rounded-full left-1/2 -translate-x-1/2 overflow-hidden' style={{ clipPath: "circle(50%)" }} href="/">
@@ -49,6 +50,7 @@ const Navbar = () => {
                     </Link>
                     <div className='w-1/2 flex items-center justify-around' style={{ paddingLeft: `${headerOffset}px` }}>
                         <NavLink href="/about-us" isActive={pathname === "/about-us"}>O nás</NavLink>
+                        <NavLink href="/about-our-homestead" isActive={pathname === "/about-our-homestead"}>O našem statku</NavLink>
                         <NavLink href="/contact" isActive={pathname === "/contact"}>Kontakt</NavLink>
                     </div>
                 </ul>

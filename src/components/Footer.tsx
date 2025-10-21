@@ -26,8 +26,10 @@ const Footer = () => {
               <h1>Stáj Půlpecen</h1>
               <ul className="flex h-12 w-full md:max-w-7xl gap-16">
                 <NavLink href="/photo-gallery" isActive={pathname.startsWith("/photo-gallery")}>Fotogalerie</NavLink>
+                <NavLink href="/photos-from-trips" isActive={pathname.startsWith("/photos-from-trips")}>Fotky z výletů</NavLink>
                 <NavLink href="/our-horses" isActive={pathname.startsWith("/our-horses")}>Naši koně</NavLink>
                 <NavLink href="/about-us" isActive={pathname === "/about-us"}>O nás</NavLink>
+                <NavLink href="/about-our-homestead" isActive={pathname === "/about-our-homestead"}>O našem statku</NavLink>
                 <NavLink href="/contact" isActive={pathname === "/contact"}>Kontakt</NavLink>    
               </ul>
             </div>

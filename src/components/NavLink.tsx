@@ -7,7 +7,7 @@ const NavLink = ({ href, children, isActive }: NavLinkProps) => {
     <li className="text-sm">
       <Link
         href={href}
-        className={` cursor-pointer hover:font-bold ${isActive ? "font-bold text-black" : "text-black"}`}
+        className={` cursor-pointer ${isActive ? "font-bold text-black" : "text-black"}`}
       >
         <span
           className={`
