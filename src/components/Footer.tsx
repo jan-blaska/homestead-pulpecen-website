@@ -40,7 +40,7 @@ const Footer = () => {
               height={150}
             />
           </div>
-          <p className='text-center mt-8'>© 2025 Rodinný statek Půlpecen</p>
+          <p className='text-center mt-8'>© 2025 Stáj Půlpecen</p>
         </div>
       </div>
     </footer>
