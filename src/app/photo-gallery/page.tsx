@@ -4,10 +4,12 @@ import HorseWithCamera from "/public/horse-with-camera.svg";
 import Placeholder from "/public/placeholder.png";
 import PhotoGalleryCard from '@/components/PhotoGalleryCard';
 import { createClient } from '@/utils/supabase/server';
+import { getImageUrl } from '@/utils/supabase/helpers';
 
 const PhotoGallery = async () => {
   const supabase = await createClient();  
-  const { data: photoGallery, error } = await supabase.from("photo-gallery").select();
+  const { data: photoGallery, error } = await supabase.from("photo-gallery").select("id, title, description, cover_image_url, created_at")
+    .order('created_at', { ascending: false });
 
   if (error) {
     console.error("Chyba při načítání galerie:", error.message);
@@ -24,15 +26,15 @@ const PhotoGallery = async () => {
           className='mt-16 mb-12'
         />
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {photoGallery?.map((item) => (
+          {photoGallery?.map((galerry) => (
             <PhotoGalleryCard
-              key={item.id}
-              href='' 
-              imageSrc={item.cover_image_url}
-              imageAlt={item.title ?? ''}
-              dateCreated={new Date(item.created_at).toLocaleDateString('cs-CZ')}
-              title={item.title}
-              description={item.description ?? ''}
+              key={galerry.id}
+              href={`/photo-gallery/${galerry.id}`}
+              imageSrc={getImageUrl(galerry.cover_image_url)}
+              imageAlt={galerry.title ?? ''}
+              dateCreated={new Date(galerry.created_at).toLocaleDateString('cs-CZ')}
+              title={galerry.title}
+              description={galerry.description ?? ''}
             />
           ))}
         </div>
