@@ -54,20 +54,15 @@ export default async function GalleryDetail({ params }: Params) {
 
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6">
         {Array.isArray(gallery.images) && gallery.images.length > 0 ? (
-          gallery.images.map(({src, desc} : GalleryDetailImage, i: number) => (
-            <div key={i}>
-              <div className="relative w-full h-64">
-                <Image
-                  src={getImageUrl(src)}
-                  alt={`${gallery.title} #${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw,
-                  (max-width: 1200px) 50vw,
-                  33vw"
-                  priority={i === 0} // první obrázek priorita
-                />
-              </div>
+          gallery.images.map(({src, desc} : GalleryDetailImage, index: number) => (
+            <div key={index}>
+              <Image
+                src={getImageUrl(src)}
+                alt={`${gallery.title} #${index + 1}`}
+                width={500}
+                height={300}
+                priority={index === 0} // první obrázek priorita
+              />
               {desc && <p>{desc}</p>} 
             </div>
           ))

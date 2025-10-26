@@ -26,15 +26,15 @@ const PhotoGallery = async () => {
           className='mt-16 mb-12'
         />
         <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {photoGallery?.map((galerry) => (
+          {photoGallery?.map((gallery) => (
             <PhotoGalleryCard
-              key={galerry.id}
-              href={`/photo-gallery/${galerry.id}`}
-              imageSrc={getImageUrl(galerry.cover_image_url)}
-              imageAlt={galerry.title ?? ''}
-              dateCreated={new Date(galerry.created_at).toLocaleDateString('cs-CZ')}
-              title={galerry.title}
-              description={galerry.description ?? ''}
+              key={gallery.id}
+              href={`/photo-gallery/${gallery.id}`}
+              imageSrc={getImageUrl(gallery.cover_image_url)}
+              imageAlt={gallery.title ?? ''}
+              dateCreated={new Date(gallery.created_at).toLocaleDateString('cs-CZ')}
+              title={gallery.title}
+              description={gallery.description ?? ''}
             />
           ))}
         </div>
