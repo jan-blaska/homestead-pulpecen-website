@@ -36,4 +36,4 @@ const ContentTextWithPhoto = ({
   )
 }
 
-export default ContentTextWithPhoto
+export default ContentTextWithPhoto;
