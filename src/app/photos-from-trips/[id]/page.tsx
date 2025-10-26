@@ -2,19 +2,13 @@ import Image from 'next/image';
 import { createClient } from '@/utils/supabase/server';
 import Link from 'next/link';
 import { getImageUrl } from '@/utils/supabase/helpers';
+import { GalleryDetailImage, DetailPageParams } from '@/types';
 
 export const revalidate = 60;
 
-type Params = { params: { id: string } };
-
-type GalleryDetailImage = {
-  src: string,
-  desc?: string,
-}
-
-export default async function GalleryDetail({ params }: Params) {
+export default async function GalleryDetail({ params }: DetailPageParams) {
   const supabase = await createClient();
-  const id = Number(params.id);
+  const { id } = await params;
 
   const { data: gallery, error } = await supabase
     .from('photos-from-trips')
@@ -61,7 +55,7 @@ export default async function GalleryDetail({ params }: Params) {
                 alt={`${gallery.title} #${index + 1}`}
                 width={500}
                 height={300}
-                priority={index === 0} // první obrázek priorita
+                priority={index === 0} // first photo is priority
               />
               {desc && <p>{desc}</p>} 
             </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import ContentTextWithPhoto from '@/components/ContentTextWithPhoto';
 import HorsesTogether from "/public/horses-together.svg";
-import Pusa from "/public/our-horses/pusa.jpg";
 import horses from '@/app/our-horses/our-horses.json';
 import type { Horse } from '@/types';
 

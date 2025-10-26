@@ -6,6 +6,13 @@ export type NavLinkProps = {
     isActive?: boolean
 }
 
+export type DetailPageParams = { params: Promise<{ id: string }> };
+
+export type GalleryDetailImage = {
+  src: string,
+  desc?: string,
+}
+
 export type Horse = {
   id: string;
   name: string;
