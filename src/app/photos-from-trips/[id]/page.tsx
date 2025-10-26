@@ -17,7 +17,7 @@ export default async function GalleryDetail({ params }: Params) {
   const id = Number(params.id);
 
   const { data: gallery, error } = await supabase
-    .from('photo-gallery')
+    .from('photos-from-trips')
     .select('id, title, description, created_at, images')
     .eq('id', id)
     .single();
@@ -28,7 +28,7 @@ export default async function GalleryDetail({ params }: Params) {
     console.error(error);
     return (
       <main className="p-6">
-        <Link href="/photo-gallery" className="underline">
+        <Link href="/photos-from-trips" className="underline">
           &larr; Zpět na Fotogalerii
         </Link>
         <p className="mt-4">Nepodařilo se načíst tuto galerii.</p>
@@ -38,7 +38,7 @@ export default async function GalleryDetail({ params }: Params) {
 
   return (
     <main className="mx-auto w-[95%] md:max-w-7xl p-6">
-      <Link href="/photo-gallery">
+      <Link href="/photos-from-trips">
         &larr; Zpět na Fotogalerii
       </Link>
 
@@ -57,7 +57,7 @@ export default async function GalleryDetail({ params }: Params) {
           gallery.images.map(({src, desc} : GalleryDetailImage, index: number) => (
             <div key={index}>
               <Image
-                src={getImageUrl(`/photo-gallery/${src}`)}
+                src={getImageUrl(`/photos-from-trips/${src}`)}
                 alt={`${gallery.title} #${index + 1}`}
                 width={500}
                 height={300}
