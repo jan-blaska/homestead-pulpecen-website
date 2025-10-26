@@ -1,0 +1,71 @@
+[
+  {
+    "id": "pusa",
+    "name": "Pusa",
+    "alias": "Pusinka",
+    "image": "/our-horses/pusa.jpg",
+    "imageAlt": "Horse Pusa",
+    "imageAspectRatio": "3 / 2",
+    "texts": [
+      "Dorazila k nám ve svých 4 letech v roce 2011.",
+      "",
+      ""
+    ],
+    "status": "current"
+  },
+  {
+    "id": "ester",
+    "name": "Ester",
+    "alias": "Esterka",
+    "image": "/our-horses/ester.jpg",
+    "imageAlt": "Horse Ester",
+    "imageAspectRatio": "3 / 2",
+    "texts": [
+      "...",
+      "",
+      ""
+    ],
+    "status": "current"
+  },
+  {
+    "id": "samira",
+    "name": "Samira",
+    "alias": "Samirka",
+    "image": "/our-horses/samira.jpg",
+    "imageAlt": "Horse Samira",
+    "imageAspectRatio": "3 / 2",
+    "texts": [
+      "...",
+      "",
+      ""
+    ],
+    "status": "current"
+  },
+  {
+    "id": "helen",
+    "name": "Helen",
+    "alias": "Helča",
+    "image": "/our-horses/helen.jpg",
+    "imageAlt": "Horse Samira",
+    "imageAspectRatio": "3 / 2",
+    "texts": [
+      "...",
+      "",
+      ""
+    ],
+    "status": "past"
+  },
+  {
+    "id": "sam",
+    "name": "Sam",
+    "image": "/our-horses/sam.jpg",
+    "imageAlt": "Horse Samira",
+    "imageAspectRatio": "3 / 2",
+    "texts": [
+      "...",
+      "",
+      ""
+    ],
+    "status": "past"
+  }
+]
