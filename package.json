@@ -12,6 +12,7 @@
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.76.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.548.0",
     "next": "15.5.5",
     "next-cloudinary": "^6.16.2",
     "next-video": "^2.5.0",

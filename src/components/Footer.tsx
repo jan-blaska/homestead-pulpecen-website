@@ -6,10 +6,12 @@ import Image from 'next/image';
 import FooterWave from "/public/footer-wave.svg";
 import PusaLogoOnlyHead from "/public/pusa-logo-only-head.svg";
 import NavLink from './NavLink';
+import { NAV_LINKS } from '@/config/links';
+import clsx from 'clsx';
 
 const Footer = () => {
   const pathname = usePathname();
-  
+
   return (
     <footer className='w-full mt-24'>
       <Image
@@ -24,13 +26,17 @@ const Footer = () => {
           <div className='flex w-full justify-between'>
             <div className='flex flex-col gap-4'>
               <h1>Stáj Půlpecen</h1>
-              <ul className="flex h-12 w-full md:max-w-7xl gap-16">
-                <NavLink href="/photo-gallery" isActive={pathname.startsWith("/photo-gallery")}>Fotogalerie</NavLink>
-                <NavLink href="/photos-from-trips" isActive={pathname.startsWith("/photos-from-trips")}>Fotky z výletů</NavLink>
-                <NavLink href="/our-horses" isActive={pathname.startsWith("/our-horses")}>Naši koně</NavLink>
-                <NavLink href="/about-us" isActive={pathname === "/about-us"}>O nás</NavLink>
-                <NavLink href="/about-our-homestead" isActive={pathname === "/about-our-homestead"}>O našem statku</NavLink>
-                <NavLink href="/contact" isActive={pathname === "/contact"}>Kontakt</NavLink>    
+              <ul className="flex w-full flex-wrap md:max-w-7xl gap-4 md:gap-8">
+                {NAV_LINKS.map((link, index) => {
+                    return (
+                        <NavLink
+                            key={index}
+                            href={link.href}
+                            isActive={pathname.startsWith(link.href)}
+                        >
+                            <p className={clsx(pathname.startsWith(link.href) ?? "font-bold")}>{link.label}</p>
+                        </NavLink>)
+                    })}
               </ul>
             </div>
             <Image
@@ -38,9 +44,10 @@ const Footer = () => {
               alt="Pusa logo only head"
               width={150}
               height={150}
+              className='pl-2'
             />
           </div>
-          <p className='text-center mt-8'>© 2025 Stáj Půlpecen</p>
+          <p className='text-center mt-4 md:mt-8'>© 2025 Stáj Půlpecen</p>
         </div>
       </div>
     </footer>
