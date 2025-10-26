@@ -65,4 +65,4 @@ const OurHorses = () => {
   )
 }
 
-export default OurHorses
+export default OurHorses  

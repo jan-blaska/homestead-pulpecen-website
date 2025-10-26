@@ -3,8 +3,8 @@ import { Mail, Phone } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className='mx-auto flex flex-col items-center w-[95%] md:max-w-7xl'>
-      <h1 className='mb-6 mt-12 md:mt-24 underline underline-offset-4'>
+    <div className='mx-auto flex flex-col items-center w-[95%] md:max-w-xl'>
+      <h1 className='mb-12 mt-12 md:mt-24 underline underline-offset-4'>
         Kontakt
       </h1>
 
@@ -13,7 +13,7 @@ const Contact = () => {
         ohledně našich koní či čehokoliv dalšího. Jsme otevření dotazům i nezávazným návštěvám.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+      <div className="grid grid-cols-1 gap-12 md:gap-16 w-full">
         {/* Verča */}
         <div className="flex flex-col justify-center items-center gap-4">
           <h2 className="font-semibold">Verča Blašková</h2>
