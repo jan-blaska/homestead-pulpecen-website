@@ -29,7 +29,7 @@ const ContentTextWithPhoto = ({
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className="rounded-md object-contain"
+                className="rounded-md object-cover"
             />
         </div>
     </div>

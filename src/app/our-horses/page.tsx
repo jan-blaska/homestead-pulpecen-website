@@ -28,7 +28,7 @@ const OurHorses = () => {
               <h2 className='mb-2'>
                 {horse.name} {horse.alias && `(alias ${horse.alias})`}
               </h2>
-              <ContentTextWithPhoto 
+              <ContentTextWithPhoto
                 imageSrc={horse.image}
                 imageAspectRatio={horse.imageAspectRatio ?? "3 / 2"}
                 reverseTextWithPhoto={true}
