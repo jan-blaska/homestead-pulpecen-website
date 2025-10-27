@@ -1,0 +1,29 @@
+[
+  {
+    "id": "jana",
+    "name": "Jana",
+    "image": "/about-us/jana.jpg",
+    "imageAlt": "Jana",
+    "texts": [
+      "Vedoucí našeho týmu, hlavní jezdkyně, prvotřídní zdravotnice a ošetřovatelka našich koníků."
+    ]
+  },
+  {
+    "id": "verca",
+    "name": "Verča",
+    "image": "/about-us/verca.jpg",
+    "imageAlt": "Verča",
+    "texts": [
+      ""
+    ]
+  },
+  {
+    "id": "honza",
+    "name": "Honza",
+    "image": "/about-us/honza.jpg",
+    "imageAlt": "Honza",
+    "texts": [
+      ""
+    ]
+  }
+]

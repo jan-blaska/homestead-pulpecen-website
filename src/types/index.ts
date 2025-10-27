@@ -23,3 +23,12 @@ export type Horse = {
   texts: string[];
   status: "current" | "past";
 };
+
+export type Person = {
+  id: string;
+  name: string;
+  image: string;
+  imageAlt: string;
+  imageAspectRatio?: string;
+  texts: string[];
+};
