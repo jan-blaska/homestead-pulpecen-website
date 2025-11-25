@@ -13,6 +13,33 @@ import TwoCuteHorsesWinter from "/public/homepage/two-cute-horses-winter.jpg";
 import HorsePath from "/public/horse-path.svg";
 import ContentTextWithPhoto from '@/components/ContentTextWithPhoto';
 import ContentTwoPhotos from '@/components/ContentTwoPhotos';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Stáj Půlpecen – Rodinný koňský statek na Svitavsku",
+  description:
+    "Stáj Půlpecen je malý rodinný koňský statek v obci Půlpecen na Svitavsku. Koně jsou součástí naší rodiny – sdílíme náš příběh, fotografie a každodenní život s koňmi.",
+  openGraph: {
+    title: "Stáj Půlpecen – Rodinný koňský statek na Svitavsku",
+    description:
+      "Rodinný koňský statek v obci Půlpecen na Svitavsku. Poznejte naše koně a běžný život na statku plném přírody, klidu a radosti.",
+    url: "https://stajpulpecen.cz",
+    siteName: "Stáj Půlpecen",
+    type: "website",
+    images: [
+      {
+        url: "https://stajpulpecen.cz/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Stáj Půlpecen – Rodinný koňský statek",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://stajpulpecen.cz",
+  },
+};
+
 
 const Home = () => {
   return (
