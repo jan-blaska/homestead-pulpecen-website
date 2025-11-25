@@ -3,27 +3,28 @@
     "id": "jana",
     "name": "Jana",
     "image": "/about-us/jana.jpg",
-    "imageAlt": "Jana",
-    "texts": [
-      "Vedoucí našeho týmu, hlavní jezdkyně, prvotřídní zdravotnice a ošetřovatelka našich koníků."
-    ]
+    "imageAlt": "jezdkyně Jana",
+      "texts": [
+        "Jana je srdcem i hlavou celé stáje. U koní vyrůstala odmalička a její vztah ke zvířatům je vidět na každém kroku. Je hlavní jezdkyní, ošetřovatelkou i tou, která vždy ví, co který kůň potřebuje. Kromě každodenní péče se stará o zdraví našich koníků, dohlíží na krmení, kontroluje pastviny a má přehled o všem, co se na statku děje.",
+        "Jana je ten člověk, který přijde za koňmi i v době, kdy by většina lidí seděla doma v teple. Její trpělivost, laskavost a zkušenosti dělají z našeho statku místo, kde jsou koně opravdu členy rodiny. Bez ní by Stáj Půlpecen nebyla tím, čím je dnes."
+      ]
   },
   {
     "id": "verca",
     "name": "Verča",
     "image": "/about-us/verca.jpg",
-    "imageAlt": "Verča",
+    "imageAlt": "jezdkyně Verča",
     "texts": [
-      ""
+      "Verča je zkušená jezdkyně a nedílná součást našeho statku. Většinu fotografií na tomto webu pořídila právě ona a v minulosti se starala také o celý web. Na statku pomáhá s jízdami, péčí o koně i každodenními povinnostmi."
     ]
   },
   {
     "id": "honza",
     "name": "Honza",
     "image": "/about-us/honza.jpg",
-    "imageAlt": "Honza",
+    "imageAlt": "jezdec Honza",
     "texts": [
-      ""
+      "Honza je technická podpora statku i jezdec na vyjížďkách. Kromě pomoci se zvířaty má na starosti také web a fotografie."
     ]
   }
 ]

@@ -35,7 +35,9 @@ const Navbar = () => {
                 <Link href="/">
                     <Image src={HorseLogo.src} alt="logo" width={54} height={54} />
                 </Link>
-                <h1>Stáj Půlpecen</h1>
+                <span className="font-kaushan-script text-2xl">
+                    Stáj Půlpecen
+                </span>
                 <button 
                     onClick={() => setOpen(!open)} 
                     className="p-2 cursor-pointer"
@@ -66,8 +68,8 @@ const Navbar = () => {
 
             {/* desktop menu */}
             <div className='hidden md:flex w-full items-center bg-hp-primary h-16 text-white'>
-                <h1 className='w-1/2 text-right' style={{ marginRight: `${headerOffset}px` }}>{header.partOne}</h1>
-                <h1 className='w-1/2' style={{ marginLeft: `${headerOffset}px` }}>{header.partTwo}</h1>
+                <span className='font-kaushan-script text-2xl w-1/2 text-right' style={{ marginRight: `${headerOffset}px` }}>{header.partOne}</span>
+                <span className='font-kaushan-script text-2xl w-1/2' style={{ marginLeft: `${headerOffset}px` }}>{header.partTwo}</span>
             </div>
             <nav className="hidden md:flex justify-center ">
                 <ul className="flex h-12 w-full md:max-w-7xl">

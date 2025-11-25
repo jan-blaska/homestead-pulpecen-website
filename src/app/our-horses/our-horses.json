@@ -4,11 +4,11 @@
     "name": "Samira",
     "alias": "Samirka",
     "image": "/our-horses/samira.jpg",
-    "imageAlt": "Kůň Samira",
+    "imageAlt": "Hříbě Samira na pastvině",
     "texts": [
-      "Narodila se 21.4.2025 a u nás je od svého teprve půl roku.",
-      "Je to plemeno českomoravský belgický kůň.",
-      "Jméno Samira má arabský původ a znamená „společnice pro rozhovor“, „ta, se kterou je příjemné mluvit večer“.",
+      "Narodila se 21. 4. 2025 a je to nejmladší přírůstek naší stáje. K nám se dostala jako půlroční hříbě.",
+      "Je to plemeno českomoravský belgický kůň – silné, klidné a přátelské plemeno, které je ideální pro rodinný statek.",
+      "Jméno Samira má arabský původ a znamená „společnice pro večerní rozhovor“. Je to přátelská, zvídavá a vyrovnaná klisnička.",
       "Její otec se jmenoval Paladin a její matka Sáva."
     ],
     "status": "current"
@@ -18,14 +18,13 @@
     "name": "Ester Kirké",
     "alias": "Esterka",
     "image": "/our-horses/ester.jpg",
-    "imageAlt": "Kůň Ester",
-    
+    "imageAlt": "Klisna Ester",
     "texts": [
-      "Narodila se 18.4.2007 a u nás je od svých 14 let.",
-      "Je to plemeno welsh part-bred.",
-      "Jméno Ester pochází z hebrejštiny a znamená hvězda. Kirké je postava z řecké mytologie - kouzelnice a bohyně z Homérovy Odysseie, která proměňovala muže v prasata. Dohromady její jméno znamená hvězdná kouzelnice.",
-      "Její otec se jmenoval Jup a její matka Markýza.",
-      "Dříve jezdila western a má plno energie."
+      "Narodila se 18. 4. 2007 a u nás je od svých 14 let.",
+      "Je to plemeno welsh part-bred – temperamentní, inteligentní a elegantní kůň.",
+      "Jméno Ester pochází z hebrejštiny a znamená hvězda. Kirké je čarodějka z řecké mytologie známá z Homérovy Odysseie. Dohromady její jméno znamená „hvězdná kouzelnice“.",
+      "Její otec se jmenoval Jup a matka Markýza.",
+      "Dříve jezdila western a energie má pořád na rozdávání."
     ],
     "status": "current"
   },
@@ -34,12 +33,12 @@
     "name": "Pusinka",
     "alias": "Pusa",
     "image": "/our-horses/pusa.jpg",
-    "imageAlt": "Kůň Pusinka",
+    "imageAlt": "Klisna Pusinka",
     "texts": [
-      "Narodila se 21.3.2007 a u nás je od svých 4 let.",
-      "Je to plemeno českomoravský belgický kůň.",
-      "U předchozího majitele jí potkalo zranění, ale naštěstí se ocitla u nás, kde se jí dostalo lásky a péče.",
-      "Je hodně zvídavá a ráda zkoumá, co se kde děje."
+      "Narodila se 21. 3. 2007 a k nám přišla ve 4 letech.",
+      "Je to plemeno českomoravský belgický kůň – silná, pracovitá a velmi přátelská klisna.",
+      "U předchozího majitele utrpěla zranění, ale u nás našla nový domov, péči a klid.",
+      "Je hodně zvídavá, všechno musí prozkoumat a nic jí neunikne."
     ],
     "status": "current"
   },
@@ -48,13 +47,13 @@
     "name": "Helen",
     "alias": "Helča",
     "image": "/our-horses/helen.jpg",
-    "imageAlt": "Kůň Helen",
+    "imageAlt": "Klisna Helen",
     "texts": [
-      "Narodila se 1.5.1997 a byla u nás od svého 1. roku.",
-      "Je to plemeno slovenský teplokrevník.",
-      "Její otec se jmenoval Obvod a její matka Heda.",
-      "Byl to jediný kůň, který u nás prožil celý svůj život. Byl to vůdce stáda, který byl klidný a koně ho respektovaly.",
-      "Porodila 2 koně, Dajánu a Merlina."
+      "Narodila se 1. 5. 1997 a byla u nás od svého prvního roku.",
+      "Je to plemeno slovenský teplokrevník – elegantní, klidná a vyrovnaná klisna.",
+      "Její otec se jmenoval Obvod a matka Heda.",
+      "Byla jediným koněm, který u nás prožil celý svůj život. Byla vůdkyní stáda, kterou ostatní koně respektovali.",
+      "Porodila dvě hříbata – Dajánu a Merlina."
     ],
     "status": "past"
   },
@@ -63,11 +62,11 @@
     "name": "Dajána",
     "alias": "Dája",
     "image": "/our-horses/dajana.jpg",
-    "imageAlt": "Kůň Dajána",
+    "imageAlt": "Klisna Dajána",
     "texts": [
-      "Narodila se 18.7.2004 na našem statku a byla u nás do svým 7 let, než putovala ke své nové majitelce.",
+      "Narodila se 18. 7. 2004 na našem statku a byla u nás do svých 7 let, než putovala k nové majitelce.",
       "Je to plemeno český teplokrevník.",
-      "Její otec se jmenoval Deny a její matka Helen."
+      "Její otec se jmenoval Deny a matka Helen."
     ],
     "status": "past"
   },
@@ -75,12 +74,12 @@
     "id": "merlin",
     "name": "Merlin",
     "image": "/our-horses/merlin.jpg",
-    "imageAlt": "Kůň Merlin",
+    "imageAlt": "Hřebec Merlin",
     "texts": [
-      "Narodil se 21.6.2010 na našem statku a byl u nás do svého jednoho roku, než putoval k nové majitelce.",
+      "Narodil se 21. 6. 2010 na našem statku a byl u nás do svého jednoho roku, než odešel k nové majitelce.",
       "Je to plemeno český teplokrevník.",
-      "Jeho otec se jmenoval Mineral a jeho matka Helen.",
-      "S novou majitelkou jezdil drezúru."
+      "Jeho otec se jmenoval Mineral a matka Helen.",
+      "Se svou novou majitelkou se věnoval drezurnímu ježdění."
     ],
     "status": "past"
   },
@@ -90,8 +89,8 @@
     "image": "/our-horses/sam.jpg",
     "imageAlt": "Kůň Sam",
     "texts": [
-      "Narodil se v roce 2004 a byl u nás v letech 2009 až 2011.",
-      "Je to plemeno hucul."
+      "Narodil se v roce 2004 a byl u nás v letech 2009–2011.",
+      "Je to plemeno hucul – malé, silné a velmi vytrvalé plemeno."
     ],
     "status": "past"
   },
@@ -99,10 +98,10 @@
     "id": "princ",
     "name": "Princ",
     "image": "/our-horses/princ.jpg",
-    "imageAlt": "Kůň Princ",
+    "imageAlt": "Poník Princ",
     "texts": [
-      "Narodil se 8.3.1998 a byl u nás od svých 12 let do svých 13 let.",
-      "Je to plemeno poník."
+      "Narodil se 8. 3. 1998 a byl u nás od svých 12 do 13 let.",
+      "Je to plemeno pony – chytrý, živý a hravý kůň."
     ],
     "status": "past"
   }
