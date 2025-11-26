@@ -31,9 +31,9 @@ const Navbar = () => {
         <header className="w-full bg-white relative z-10">
             
             {/* mobile menu */}
-            <nav className='flex md:hidden justify-between items-center p-4 bg-hp-primary text-white'>
+            <nav aria-label="Navbar navigace" className='flex md:hidden justify-between items-center p-4 bg-hp-primary text-white'>
                 <Link href="/">
-                    <Image src={HorseLogo.src} alt="logo" width={54} height={54} />
+                    <Image src={HorseLogo.src} alt="Stáj Půlpecen – logo koně" width={54} height={54} />
                 </Link>
                 <span className="font-kaushan-script text-2xl">
                     Stáj Půlpecen
@@ -50,16 +50,16 @@ const Navbar = () => {
             </nav>
 
             {open && (
-                <div className="flex md:hidden w-full flex-col bg-hp-primary absolute py-2">
-                    {NAV_LINKS.map((link, index) => {
+                <div id="mobile-menu" className="flex md:hidden w-full flex-col bg-hp-primary absolute py-2">
+                    {NAV_LINKS.map((link) => {
                         return (
                             <Link 
-                                key={index}
+                                key={link.href}
                                 href={link.href} 
                                 className={clsx("px-4 py-2 hover:bg-white/10")}
                                 onClick={handleClose}
                             >
-                                <p className={clsx(pathname.startsWith(link.href) ? "text-black font-bold" : "text-white")}>{link.label}</p>
+                                <p className={pathname.startsWith(link.href) ? "text-black font-bold" : "text-white"}>{link.label}</p>
                             </Link>)
                     })}
                 </div>
@@ -71,28 +71,30 @@ const Navbar = () => {
                 <span className='font-kaushan-script text-2xl w-1/2 text-right' style={{ marginRight: `${headerOffset}px` }}>{header.partOne}</span>
                 <span className='font-kaushan-script text-2xl w-1/2' style={{ marginLeft: `${headerOffset}px` }}>{header.partTwo}</span>
             </div>
-            <nav className="hidden md:flex justify-center ">
-                <ul className="flex h-12 w-full md:max-w-7xl">
-                    <div className='w-1/2 flex items-center justify-around' style={{ paddingRight: `${headerOffset}px` }}> 
+            <nav aria-label="Navbar navigace" className="hidden md:flex justify-center ">
+                <ul className="flex h-12 w-full md:max-w-7xl list-none">
+                    <li className='w-1/2 flex items-center justify-around' style={{ paddingRight: `${headerOffset}px` }}> 
                         <NavLink href="/photo-gallery" isActive={pathname.startsWith("/photo-gallery")}>Fotogalerie</NavLink>
                         <NavLink href="/photos-from-trips" isActive={pathname.startsWith("/photos-from-trips")}>Fotky z výletů</NavLink>
                         <NavLink href="/our-horses" isActive={pathname === "/our-horses"}>Naši koně</NavLink>
-                    </div>
-                    <Link className='absolute top-0 rounded-full left-1/2 -translate-x-1/2 overflow-hidden' style={{ clipPath: "circle(50%)" }} href="/">
-                        <div className="relative z-100 cursor-pointer">
-                            <Image
-                                src={HorseLogo.src}
-                                alt="Logo with horse"
-                                width={logoSize.width}
-                                height={logoSize.height}
-                            />
-                        </div>
-                    </Link>
-                    <div className='w-1/2 flex items-center justify-around' style={{ paddingLeft: `${headerOffset}px` }}>
+                    </li>
+                    <li>
+                        <Link className='absolute top-0 rounded-full left-1/2 -translate-x-1/2 overflow-hidden' style={{ clipPath: "circle(50%)" }} href="/">
+                            <div className="relative z-20 cursor-pointer">
+                                <Image
+                                    src={HorseLogo.src}
+                                    alt="Stáj Půlpecen – logo koně"
+                                    width={logoSize.width}
+                                    height={logoSize.height}
+                                />
+                            </div>
+                        </Link>
+                    </li>
+                    <li className='w-1/2 flex items-center justify-around' style={{ paddingLeft: `${headerOffset}px` }}>
                         <NavLink href="/about-us" isActive={pathname === "/about-us"}>O nás</NavLink>
                         <NavLink href="/about-our-homestead" isActive={pathname === "/about-our-homestead"}>O našem statku</NavLink>
                         <NavLink href="/contact" isActive={pathname === "/contact"}>Kontakt</NavLink>
-                    </div>
+                    </li>
                 </ul>
             </nav>
         </header>
