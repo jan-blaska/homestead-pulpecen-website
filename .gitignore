@@ -49,3 +49,8 @@ public/_next-video
 
 # credentials
 credentials.md
+
+# sitemap
+public/sitemap.xml
+public/sitemap-*.xml
+public/robots.txt
