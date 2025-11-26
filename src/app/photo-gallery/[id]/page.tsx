@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getImageUrl } from '@/utils/supabase/helpers';
 import { GalleryDetailImage, DetailPageParams } from '@/types';
 import type { Metadata } from "next";
+import { ArrowLeft } from 'lucide-react';
 
 export async function generateMetadata({ params }: DetailPageParams): Promise<Metadata> {
   const supabase = await createClient();
@@ -70,9 +71,13 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
 
   return (
     <main className="mx-auto w-[95%] md:max-w-7xl p-6">
-      <Link href="/photo-gallery">
-        &larr; Zpět na Fotogalerii
-      </Link>
+    <Link 
+      href="/photo-gallery"
+      className="inline-flex items-center gap-2 text-hp-primary hover:underline transition mb-8 mt-4"
+    >
+      <ArrowLeft size={18} />
+      Zpět na fotogalerii
+    </Link>
 
       <h1 className="mt-8 mb-2">{gallery.title}</h1>
       {gallery.description && (
@@ -84,15 +89,15 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
           : ''}
       </p>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6">
+      <div className="grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 mt-6 place-items-center">
         {Array.isArray(gallery.images) && gallery.images.length > 0 ? (
           gallery.images.map(({src, desc} : GalleryDetailImage, index: number) => (
             <div key={index}>
               <Image
                 src={getImageUrl(`/photo-gallery/${src}`)}
                 alt={`${gallery.title} – fotografie č. ${index + 1}`}
-                width={500}
-                height={300}
+                width={800}
+                height={500}
                 priority={index === 0}
                 className="rounded-lg"
               />

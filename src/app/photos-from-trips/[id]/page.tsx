@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { getImageUrl } from '@/utils/supabase/helpers';
 import type { Metadata } from "next";
 import { GalleryDetailImage, DetailPageParams } from '@/types';
+import { ArrowLeft } from 'lucide-react';
 
 export const revalidate = 60;
 
@@ -78,8 +79,13 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
 
   return (
     <main className="mx-auto w-[95%] md:max-w-7xl p-6">
-      <Link href="/photos-from-trips">
-        &larr; Zpět na fotky z výletů
+      
+      <Link 
+        href="/photo-gallery"
+        className="inline-flex items-center gap-2 text-hp-primary hover:underline transition mb-8 mt-4"
+      >
+        <ArrowLeft size={18} />
+        Zpět na fotky z výletů
       </Link>
 
       <h1 className="mt-8 mb-2">{gallery.title}</h1>
@@ -92,15 +98,15 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
           : ''}
       </p>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6">
+      <div className="grid gap-4 md:gap-8 grid-cols-1 md:grid-cols-2 mt-6 place-items-center">
         {Array.isArray(gallery.images) && gallery.images.length > 0 ? (
           gallery.images.map(({src, desc} : GalleryDetailImage, index: number) => (
             <div key={index}>
               <Image
                 src={getImageUrl(`/photos-from-trips/${src}`)}
                 alt={`${gallery.title} – fotografie č. ${index + 1}`}
-                width={500}
-                height={300}
+                width={800}
+                height={500}
                 priority={index === 0}
                 className="rounded-lg"
               />
