@@ -30,9 +30,9 @@ export const metadata: Metadata = {
 
 const AboutUs = () => {
   return (
-    <main className='mx-auto flex flex-col items-stretch w-[95%] md:max-w-7xl mt-24'>
+    <main className='mx-auto flex flex-col items-stretch w-[95%] md:max-w-7xl'>
       
-      <h1 className='mt-16 mb-8 w-[95%] md:max-w-7xl text-left'>
+      <h1 className='mt-12 md:mt-24 mb-8 w-[95%] md:max-w-7xl text-left'>
         Kdo jsme my
       </h1>
   

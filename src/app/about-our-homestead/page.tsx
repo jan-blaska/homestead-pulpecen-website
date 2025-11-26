@@ -34,7 +34,7 @@ const AboutOurHomestead = () => {
   return (
     <main className='flex flex-col items-center'>
       
-      <h1 className='mt-16 mb-8 w-[95%] md:max-w-7xl text-left'>
+      <h1 className='mt-12 md:mt-24 mb-8 w-[95%] md:max-w-7xl text-left'>
         Rodinný statek, kde koně jsou součástí rodiny
       </h1>
 
