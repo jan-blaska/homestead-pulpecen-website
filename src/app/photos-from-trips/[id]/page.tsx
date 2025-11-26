@@ -2,9 +2,57 @@ import Image from 'next/image';
 import { createClient } from '@/utils/supabase/server';
 import Link from 'next/link';
 import { getImageUrl } from '@/utils/supabase/helpers';
+import type { Metadata } from "next";
 import { GalleryDetailImage, DetailPageParams } from '@/types';
 
 export const revalidate = 60;
+
+export async function generateMetadata(
+  { params }: DetailPageParams
+): Promise<Metadata> {
+  const supabase = await createClient();
+  const { id } = await params;
+
+  const { data: gallery } = await supabase
+    .from("photos-from-trips")
+    .select("title, description, cover_image_url")
+    .eq("id", id)
+    .single();
+
+  if (!gallery) {
+    return {
+      title: "Galerie z výletu nenalezena – Stáj Půlpecen",
+    };
+  }
+
+  return {
+    title: `${gallery.title} – Fotky z výletů | Stáj Půlpecen`,
+    description:
+      gallery.description ??
+      "Fotky z výletů a vyjížděk se stádem Stáj Půlpecen.",
+    openGraph: {
+      title: `${gallery.title} – Stáj Půlpecen`,
+      description:
+        gallery.description ??
+        "Fotografie z výletů a vyjížděk Stáje Půlpecen.",
+      url: `https://stajpulpecen.cz/photos-from-trips/${id}`,
+      siteName: "Stáj Půlpecen",
+      type: "article",
+      images: [
+        {
+          url: `https://stajpulpecen.cz${
+            gallery.cover_image_url || "/og-image.jpg"
+          }`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `https://stajpulpecen.cz/photos-from-trips/${id}`,
+    },
+  };
+}
 
 export default async function GalleryDetail({ params }: DetailPageParams) {
   const supabase = await createClient();
@@ -16,14 +64,12 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
     .eq('id', id)
     .single();
 
-  console.log("Fetched data for detail", gallery);
-
   if (error) {
     console.error(error);
     return (
       <main className="p-6">
         <Link href="/photos-from-trips" className="underline">
-          &larr; Zpět na Fotogalerii
+          &larr; Zpět na fotky z výletů
         </Link>
         <p className="mt-4">Nepodařilo se načíst tuto galerii.</p>
       </main>
@@ -33,10 +79,10 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
   return (
     <main className="mx-auto w-[95%] md:max-w-7xl p-6">
       <Link href="/photos-from-trips">
-        &larr; Zpět na Fotogalerii
+        &larr; Zpět na fotky z výletů
       </Link>
 
-      <h1 className="mt-8">{gallery.title}</h1>
+      <h1 className="mt-8 mb-2">{gallery.title}</h1>
       {gallery.description && (
         <p className="text-sm opacity-80 mt-1">{gallery.description}</p>
       )}
@@ -52,10 +98,11 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
             <div key={index}>
               <Image
                 src={getImageUrl(`/photos-from-trips/${src}`)}
-                alt={`${gallery.title} #${index + 1}`}
+                alt={`${gallery.title} – fotografie č. ${index + 1}`}
                 width={500}
                 height={300}
-                priority={index === 0} // first photo is priority
+                priority={index === 0}
+                className="rounded-lg"
               />
               {desc && <p>{desc}</p>} 
             </div>

@@ -21,11 +21,12 @@ const Footer = () => {
         height={200}
         className='w-full'
       />
+
       <div className='bg-hp-primary flex flex-col items-center'>
         <div className='w-[95%] md:max-w-7xl'>
           <div className='flex w-full justify-between'>
             <div className='flex flex-col gap-4'>
-              <h1>Stáj Půlpecen</h1>
+              <span className="font-kaushan-script text-2xl">Stáj Půlpecen</span>
               <ul className="flex w-full flex-wrap md:max-w-7xl gap-4 md:gap-8">
                 {NAV_LINKS.map((link, index) => {
                     return (
@@ -50,6 +51,7 @@ const Footer = () => {
           <p className='text-center mt-4 md:mt-8'>© 2025 Stáj Půlpecen</p>
         </div>
       </div>
+      
     </footer>
   )
 }

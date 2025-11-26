@@ -4,6 +4,31 @@ import HorseWithCamera from "/public/horse-with-camera.svg";
 import PhotoGalleryCard from '@/components/PhotoGalleryCard';
 import { createClient } from '@/utils/supabase/server';
 import { getImageUrl } from '@/utils/supabase/helpers';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fotogalerie – Stáj Půlpecen",
+  description:
+    "Prohlédněte si fotogalerii koní, statku a momentů z našeho každodenního života ve Stáji Půlpecen.",
+  openGraph: {
+    title: "Fotogalerie – Stáj Půlpecen",
+    description:
+      "Fotografie koní, statku a života ve Stáji Půlpecen. Objevte naše nejnovější alba.",
+    url: "https://stajpulpecen.cz/photo-gallery",
+    siteName: "Stáj Půlpecen",
+    type: "website",
+    images: [
+      {
+        url: "https://stajpulpecen.cz/og-image.jpg",
+        width: 1200,
+        height: 630
+      }
+    ]
+  },
+  alternates: {
+    canonical: "https://stajpulpecen.cz/photo-gallery"
+  }
+};
 
 const PhotoGallery = async () => {
   const supabase = await createClient();  
@@ -12,19 +37,30 @@ const PhotoGallery = async () => {
 
   if (error) {
     console.error("Chyba při načítání galerie:", error.message);
-    return <p>Galerii se nepodařilo načíst.</p>;
+    return (
+        <main className="mx-auto w-[95%] md:max-w-7xl mt-16">
+          <h1>Fotogalerie</h1>
+          <p>Galerii se nepodařilo načíst. Zkuste to prosím znovu později.</p>
+        </main>
+    );
   }
 
   return (
-      <div className='mx-auto flex flex-col items-stretch w-[95%] md:max-w-7xl'>
+      <main className='mx-auto flex flex-col items-stretch w-[95%] md:max-w-7xl'>
+        
         <Image
           src={HorseWithCamera.src}
-          alt="Horse with camera"
+          alt="Ilustrační obrázek koně s fotoaparátem"
           width={300}
           height={300}
           className='mt-16 mb-12 mx-auto'
         />
-        <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
+
+        <h1 className='mt-0 mb-8 w-[95%] md:max-w-7xl text-left'>
+          Fotogalerie
+        </h1>
+
+        <section className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
           {photoGallery?.map((gallery) => (
             <PhotoGalleryCard
               key={gallery.id}
@@ -36,8 +72,9 @@ const PhotoGallery = async () => {
               description={gallery.description ?? ''}
             />
           ))}
-        </div>
-      </div>
+        </section>
+
+      </main>
     )
 }
 

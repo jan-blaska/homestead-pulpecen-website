@@ -3,6 +3,46 @@ import { createClient } from '@/utils/supabase/server';
 import Link from 'next/link';
 import { getImageUrl } from '@/utils/supabase/helpers';
 import { GalleryDetailImage, DetailPageParams } from '@/types';
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: DetailPageParams): Promise<Metadata> {
+  const supabase = await createClient();
+  const { id } = await params;
+
+  const { data: gallery } = await supabase
+    .from("photo-gallery")
+    .select("title, description, cover_image_url")
+    .eq("id", id)
+    .single();
+
+  if (!gallery) {
+    return {
+      title: "Galerie nenalezena – Stáj Půlpecen",
+    };
+  }
+
+  return {
+    title: `${gallery.title} – Fotogalerie | Stáj Půlpecen`,
+    description: gallery.description ?? "Fotogalerie ze Stáje Půlpecen.",
+    openGraph: {
+      title: `${gallery.title} – Stáj Půlpecen`,
+      description: gallery.description ?? "Fotogalerie ze Stáje Půlpecen.",
+      url: `https://stajpulpecen.cz/photo-gallery/${id}`,
+      siteName: "Stáj Půlpecen",
+      type: "article",
+      images: [
+        {
+          url: `https://stajpulpecen.cz${gallery.cover_image_url || "/og-image.jpg"}`,
+          width: 1200,
+          height: 630
+        }
+      ]
+    },
+    alternates: {
+      canonical: `https://stajpulpecen.cz/photo-gallery/${id}`
+    }
+  };
+}
 
 export const revalidate = 60;
 
@@ -34,7 +74,7 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
         &larr; Zpět na Fotogalerii
       </Link>
 
-      <h1 className="mt-8">{gallery.title}</h1>
+      <h1 className="mt-8 mb-2">{gallery.title}</h1>
       {gallery.description && (
         <p className="text-sm opacity-80 mt-1">{gallery.description}</p>
       )}
@@ -50,12 +90,13 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
             <div key={index}>
               <Image
                 src={getImageUrl(`/photo-gallery/${src}`)}
-                alt={`${gallery.title} #${index + 1}`}
+                alt={`${gallery.title} – fotografie č. ${index + 1}`}
                 width={500}
                 height={300}
-                priority={index === 0} // first photo is priority
+                priority={index === 0}
+                className="rounded-lg"
               />
-              {desc && <p>{desc}</p>} 
+              {desc && <p>{desc}</p>}
             </div>
           ))
         ) : (
