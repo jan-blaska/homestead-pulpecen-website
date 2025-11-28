@@ -63,7 +63,7 @@ const Home = () => {
           className='mt-6 md:mt-12 mb-12 md:mb-24 w-[95%] md:max-w-2xl scale-80 md:scale-100'
         />
 
-        <h1 className='mb-8 md:mb-16'>
+        <h1 className='mb-8 md:mb-16 w-[95%] md:max-w-7xl'>
           Rodinný statek, kde koně jsou součástí rodiny
         </h1>
 

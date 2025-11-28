@@ -20,8 +20,8 @@ const ContentTextWithPhoto = ({
     className,
 }: ContentTextWithPhotoData) => {
   return (
-    <div className={clsx('flex flex-col w-[95%] md:max-w-7xl gap-8 lg:gap-16 items-center', reverseTextWithPhoto ? 'md:flex-row-reverse' : 'md:flex-row', className)}>
-        <div className='flex flex-col w-full gap-4 md:flex-1'>
+    <div className={clsx('flex flex-col w-[95%] md:max-w-7xl gap-4 md:gap-8 lg:gap-16 items-center', reverseTextWithPhoto ? 'md:flex-row-reverse' : 'md:flex-row', className)}>
+        <div className='flex flex-col w-full gap-2 md:gap-4 md:flex-1'>
             {textArray.map((text, index) => <p key={index}>{text}</p>)}
         </div>
         <div className="relative w-full h-auto md:flex-1" style={{ aspectRatio: imageAspectRatio }}>

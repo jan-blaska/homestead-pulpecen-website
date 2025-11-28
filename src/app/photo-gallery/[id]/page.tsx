@@ -70,14 +70,15 @@ export default async function GalleryDetail({ params }: DetailPageParams) {
   }
 
   return (
-    <main className="mx-auto w-[95%] md:max-w-7xl p-6">
-    <Link 
-      href="/photo-gallery"
-      className="inline-flex items-center gap-2 text-hp-primary hover:underline transition mb-8 mt-4"
-    >
-      <ArrowLeft size={18} />
-      Zpět na fotogalerii
-    </Link>
+    <main className="mx-auto w-[95%] md:max-w-7xl py-6">
+    
+      <Link 
+        href="/photo-gallery"
+        className="inline-flex items-center gap-2 text-hp-primary hover:underline transition my-0 md:mb-8 md:mt-4"
+      >
+        <ArrowLeft size={18} />
+        Zpět na fotogalerii
+      </Link> 
 
       <h1 className="mt-8 mb-2">{gallery.title}</h1>
       {gallery.description && (

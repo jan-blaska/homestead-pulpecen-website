@@ -56,11 +56,11 @@ const PhotoGallery = async () => {
           className='mt-16 mb-12 mx-auto'
         />
 
-        <h1 className='mt-0 mb-8 w-[95%] md:max-w-7xl text-left'>
+        <h1 className='mt-0 mb-4 md:mb-8 text-left'>
           Fotogalerie
         </h1>
 
-        <section className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
+        <section className='grid grid-cols-1 gap-y-6 md:gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3'>
           {photoGallery?.map((gallery) => (
             <PhotoGalleryCard
               key={gallery.id}

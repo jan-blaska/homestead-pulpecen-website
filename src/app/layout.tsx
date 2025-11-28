@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="cs">
       <body
-        className={`${kaushanScript.variable} ${roboto.variable} antialiased`}
+        className={`${kaushanScript.variable} ${roboto.variable} antialiased flex flex-col min-h-screen`}
       >
         <Navbar />  
         {children}

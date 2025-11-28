@@ -55,7 +55,7 @@ const OurHorses = () => {
         {currentHorses.map((horse: Horse) => {
           return (
             <div key={horse.id}>
-              <h3 className='mb-2'>
+              <h3 className='mb-2 font-bold'>
                 {horse.name} {horse.alias && `(alias ${horse.alias})`}
               </h3>
               <ContentTextWithPhoto
@@ -77,7 +77,7 @@ const OurHorses = () => {
         {pastHorses.map((horse: Horse) => {
           return (
             <div key={horse.id}>
-              <h3 className='mb-2'>
+              <h3 className='mb-2 font-bold'>
                 {horse.name} {horse.alias && `(alias ${horse.alias})`}
               </h3>
               <ContentTextWithPhoto 

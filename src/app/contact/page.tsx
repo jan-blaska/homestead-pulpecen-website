@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 const Contact = () => {
   return (
-    <main className='mx-auto flex flex-col items-center w-[95%] md:max-w-xl'>
+    <main className='mx-auto flex flex-col items-center w-[95%] md:max-w-xl flex-1'>
       
       <h1 className='mb-12 mt-12 md:mt-24'>
         Kontakt
