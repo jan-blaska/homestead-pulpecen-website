@@ -1,5 +1,7 @@
 import type { ReactNode } from "react"
 
+export type PhotoAlbumNames = "photo-gallery" | "photos-from-trips";
+
 export type NavLinkProps = {
     href: string
     children: ReactNode

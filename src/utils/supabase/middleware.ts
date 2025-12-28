@@ -1,10 +1,11 @@
+
+import { isAdminEmail } from '@/app/auth/isAdminEmail'
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
+
 export async function updateSession(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({
-    request,
-  })
+  let response = NextResponse.next({ request })
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -15,20 +16,40 @@ export async function updateSession(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
-          supabaseResponse = NextResponse.next({
-            request,
+          cookiesToSet.forEach(({ name, value }) => {
+            request.cookies.set(name, value)
           })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          )
+
+          response = NextResponse.next({ request })
+
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options)
+          })
         },
       },
     }
   )
 
-  // refreshing the auth token
-  await supabase.auth.getUser()
+  const pathname = request.nextUrl.pathname
+  const isAdminRoute = pathname.startsWith('/admin')
+  const isPublicAdminRoute =
+    pathname === '/admin/login' || pathname.startsWith('/auth/callback')
 
-  return supabaseResponse
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (isAdminRoute && !isPublicAdminRoute && !user) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/admin/login'
+    return NextResponse.redirect(url)
+  }
+
+  if (isAdminRoute && !isPublicAdminRoute && user && !isAdminEmail(user.email)) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/'
+    return NextResponse.redirect(url)
+  }
+
+  return response
 }
